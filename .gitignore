@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.uv/
+
+# Sidecar virtual env
+_sidecar/.venv/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# pCloud sync
+*.tmp
+*.sync
+.pcloud/
+
+# Large media files — these go to ~/Design/media/ → pCloud
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd
+*.blend
+*.fbx
+*.obj
+*.stl
+*.pdf
+*.zip
+*.tar.gz
+
+# Images (use pCloud for media, SVGs are ok in git)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.bmp
+*.tiff
+*.heic
+*.raw
+
+# Renders and exports
+renders/
+exports/
+videos/
+assets/
+
+# Figma exports
+*.png.export/
+
+# Semantic index (rebuilt locally)
+_sidecar/.index/
+*.index
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env
+.env
+.env.local
+FIGMA_TOKEN
