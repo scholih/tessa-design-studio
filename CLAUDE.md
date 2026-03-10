@@ -34,18 +34,35 @@ My father Hans set up this environment for me.
 
 ## My projects structure
 
+### Repos (one per context)
+
+| Repo | Visibility | What goes here |
+|------|-----------|----------------|
+| `tessa-design-studio` | public | Personal work, @amaize brand, Delft coursework, this repo |
+| `tessa-thesis-brink` | **private** | Master thesis at The Brink Agency — client work, confidential |
+| `frog-internship-2024` | **private** | Archived internship at Frog Utrecht (CapGemini) |
+
+**Rule:** anything from a client or employer → private repo, never here.
+
+### This repo's folder structure
+
 ```
-~/Design/tessa-design-studio/     ← this repo
-├── projects/
-│   └── <project-name>/
-│       ├── research/             ← papers, notes, transcripts
-│       ├── briefs/               ← design briefs, requirements
-│       ├── iterations/           ← design decisions log
-│       └── README.md             ← project overview
-├── research/                     ← general literature (cross-project)
+~/Design/tessa-design-studio/     ← this repo (public)
+├── personal/
+│   ├── amaize/                   ← @amaize brand work, content, strategy
+│   └── experiments/              ← side projects, free exploration
+├── delft/                        ← TU Delft coursework (non-thesis)
+│   └── <course-name>/
+├── research/                     ← literature that spans multiple projects
 └── _sidecar/                     ← Python tools
 
-~/Design/media/                   ← NOT in git
+~/Design/tessa-thesis-brink/      ← separate PRIVATE repo
+├── research/
+├── briefs/
+├── iterations/
+└── deliverables/
+
+~/Design/media/                   ← NOT in git, syncs to pCloud
 ├── renders/
 ├── videos/
 ├── exports/
@@ -80,6 +97,13 @@ uv run _sidecar/video_prompt.py sequence brief.md
 uv run _sidecar/moodboard.py collect urls.txt --out refs/
 uv run _sidecar/moodboard.py grid refs/ --out moodboard.jpg
 uv run _sidecar/moodboard.py palette refs/
+
+# Instagram (@amaize)
+uv run _sidecar/social.py caption "describe what you photographed"
+uv run _sidecar/social.py caption photo.jpg        # analyze image directly
+uv run _sidecar/social.py hashtags "topic"
+uv run _sidecar/social.py calendar brief.md --days 7
+uv run _sidecar/social.py carousel brief.md --slides 5
 uv run _sidecar/moodboard.py analyze refs/
 ```
 
